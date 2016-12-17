@@ -69,8 +69,11 @@ $(function() {
          * hiding/showing of the menu element.
          */
 
-
-      
+          it('menu element is hidden', function() {
+         expect(('.slide-menu')).toBeDefined();
+         // the item is hidden
+           expect($('body').hasClass('.slide-menu')).toBeHidden();
+          });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test

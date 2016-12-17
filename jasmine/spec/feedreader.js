@@ -70,7 +70,7 @@ $(function() {
          */
 
 
-          });
+      
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test

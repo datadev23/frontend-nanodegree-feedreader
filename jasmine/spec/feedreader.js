@@ -80,6 +80,13 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+          it('menu button clicked', function() {
+          var menulink = $('.menu-icon-link');
+          // now implement a click event
+          menulink.click();
+          // the not negates tobehidden logic
+          expect($('body').hasClass(menulink)).not.toBeHidden();
+          });
 
 
         });      

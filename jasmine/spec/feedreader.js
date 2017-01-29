@@ -85,7 +85,7 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
 
-            it('menu element is hidden', function() {
+            it('menu element is visible', function() {
                 $("body").addClass(".menu-hidden");
                 // generate the click of the button
                 var menu = $(".menu-icon-link")

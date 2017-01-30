@@ -131,11 +131,38 @@ $(function() {
 
 
 });
+     describe('New Feed Selection', function() {
+
+        // asynchronous function
+
+         beforeEach(function(done) { 
+            // loadFeed takes an indicies value 
+            loadFeed(0,function() {
+
+                done();
+            });
+                
+            }); 
+
 
     /* TODO: Write a new test suite named "New Feed Selection"
+
+     
+                
 
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+
+         it('is a new feed item added', function() {
+        // get current title of each of the feeds
+        for(var i=0; i < allFeeds.length; i++) {
+                    expect(allFeeds[i-1]).not.toContain(allFeeds[i]);
+
+                                                }
+
+});
+    });     
 }());

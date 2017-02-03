@@ -45,8 +45,7 @@ $(function() {
          * and that the name is not empty.
          */
 
-        it('names are defined'),
-            function() {
+        it('names are defined'), function() {
                 for (var i = 0; i < allFeeds.length; i++) {
                     expect(allFeeds[i].name).toBeDefined();
                     expect(allFeeds[i].name).not.toBe(0);

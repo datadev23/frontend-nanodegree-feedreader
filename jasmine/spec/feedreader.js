@@ -88,8 +88,8 @@ $(function() {
                        // generate the click of the button
          // get the menu link that has been clicked on. 
             // get the sate for when the menu has been hidden
-            $('.menu-icon-link').get(1).click();
-             expect($("body").hasClass('.menu-hidden')).toBe(true);
+            $('.menu-icon-link').click();
+             expect($("body").hasClass('.menu-hidden')).toBe(false);
 
         });
 

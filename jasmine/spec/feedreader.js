@@ -22,7 +22,7 @@ $(function() {
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
-            expect(allFeeds.length).not.toBe(0);
+            expect(allFeeds.length).not.toEqual('');
         });
 
 
@@ -34,7 +34,7 @@ $(function() {
         it('urls are defined', function() {
             for (var i = 0; i < allFeeds.length; i++) {
                 expect(allFeeds[i].url).toBeDefined();
-                expect(allFeeds[i].url).not.toBe(0);
+                expect(allFeeds[i].url).not.toEqual('');
             }
 
         });
@@ -48,7 +48,7 @@ $(function() {
         it('names are defined'), function() {
                 for (var i = 0; i < allFeeds.length; i++) {
                     expect(allFeeds[i].name).toBeDefined();
-                    expect(allFeeds[i].name).not.toBe(0);
+                    expect(allFeeds[i].name).not.toEqual('');
                 }
 
             }
@@ -71,10 +71,10 @@ $(function() {
         it('menu element is visible', function() {
 
 
-            expect(('.menu-hidden')).toBeDefined();
+            
             // the item is hidden
            // $("body").addClass(".menu-hidden");
-            expect($("body").hasClass('.menu-hidden')).toBe(false);
+            expect($("body").hasClass('menu-hidden')).toBe(true);
 
         });
 
@@ -89,7 +89,7 @@ $(function() {
          // get the menu link that has been clicked on. 
             // get the sate for when the menu has been hidden
             $('.menu-icon-link').click();
-             expect($("body").hasClass('.menu-hidden')).toBe(false);
+             expect($("body").hasClass('menu-hidden')).toBe(false);
 
         });
 
@@ -111,7 +111,7 @@ $(function() {
             // loadFeed takes an indicies value 
             loadFeed(0, function() {
 
-                done();
+                loadFeed(0, done);
             });
 
         });

@@ -109,10 +109,10 @@ $(function() {
 
         beforeEach(function(done) {
             // loadFeed takes an indicies value 
-            loadFeed(0, function() {
+            
 
                 loadFeed(0, done);
-            });
+           
 
         });
 
@@ -129,21 +129,8 @@ $(function() {
 
 
     });
-    describe('New Feed Selection', function() {
 
-        // asynchronous function
-
-        beforeEach(function(done) {
-            // loadFeed takes an indicies value 
-            loadFeed(0, function() {
-
-                done();
-            });
-
-        });
-
-
-        /* TODO: Write a new test suite named "New Feed Selection"
+ /* TODO: Write a new test suite named "New Feed Selection"
 
          
                     
@@ -153,6 +140,24 @@ $(function() {
              * Remember, loadFeed() is asynchronous.
              */
 
+
+    describe('New Feed Selection', function() {
+
+        // asynchronous function
+
+        beforeAll(function(done) {
+            // loadFeed takes an indicies value 
+            loadFeed(0, function() {
+
+                done();
+
+                console.log("info");
+            });
+
+        }); //.beforeAll
+
+
+       
 
         it('is a new feed item added', function() {
             // get current title of each of the feeds

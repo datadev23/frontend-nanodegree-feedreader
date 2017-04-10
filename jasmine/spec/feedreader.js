@@ -144,28 +144,23 @@ $(function() {
     describe('New Feed Selection', function() {
 
         // asynchronous function
-
-        beforeAll(function(done) {
+        var feeddata 
+        beforeEach(function(done) {
             // loadFeed takes an indicies value 
-            loadFeed(0, function() {
-
-                done();
-
-                console.log("info");
-            });
-
+            
+             loadFeed(1, done);
+             feeddata = $('.feed').html();
+             //console.log(feeddata);
         }); //.beforeAll
+        
 
-
-       
-
-        it('is a new feed item added', function() {
-            // get current title of each of the feeds
-            for (var i = 0; i < allFeeds.length; i++) {
-                expect(allFeeds[i - 1]).not.toContain(allFeeds[i]);
-
-            }
-
+        it('is a new feed item added', function(done) {
+            // load the first item using the loadFeed function
+            // the init is set to zero for the first value
+            // looked at example from 
+            loadFeed(0,done);
+                expect($('.feed').html()).not.toEqual(feeddata);
+                
         });
     });
 }());

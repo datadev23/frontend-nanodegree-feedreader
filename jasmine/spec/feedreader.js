@@ -22,7 +22,7 @@ $(function() {
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
-            expect(allFeeds.length).not.toBe(0);
+            expect(allFeeds.length).not.toEqual('');
         });
 
 
@@ -30,14 +30,20 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+     
+  
 
+        
+        
         it('urls are defined', function() {
-            for (var i = 0; i < allFeeds.length; i++) {
-                expect(allFeeds[i].url).toBeDefined();
-                expect(allFeeds[i].url).not.toBe(0);
-            }
+           
+        allFeeds.forEach(function(feed){
+        expect(feed.url).toBeDefined();
+       });   
+
 
         });
+        
 
 
         /* TODO: Write a test that loops through each feed
@@ -45,11 +51,11 @@ $(function() {
          * and that the name is not empty.
          */
 
-        it('names are defined', function() {
-            for (var i = 0; i < allFeeds.length; i++) {
-                expect(allFeeds[i].name).toBeDefined();
-                expect(allFeeds[i].name).not.toBe(0);
-            }
+
+         it('names are defined', function() {
+           allFeeds.forEach(function(feed){
+           expect(feed.url).toBeDefined();
+       });
 
         });
 
@@ -71,10 +77,10 @@ $(function() {
         it('menu element is visible', function() {
 
 
-            expect(('.menu-hidden')).toBeDefined();
+            
             // the item is hidden
            // $("body").addClass(".menu-hidden");
-            expect($("body").hasClass('.menu-hidden')).toBe(false);
+            expect($("body").hasClass('menu-hidden')).toBe(true);
 
         });
 
@@ -89,7 +95,7 @@ $(function() {
          // get the menu link that has been clicked on. 
             // get the sate for when the menu has been hidden
             $('.menu-icon-link').click();
-             expect($("body").hasClass('.menu-hidden')).toBe(false);
+             expect($("body").hasClass('menu-hidden')).toBe(false);
 
         });
 
@@ -109,10 +115,10 @@ $(function() {
 
         beforeEach(function(done) {
             // loadFeed takes an indicies value 
-            loadFeed(0, function() {
+            
 
-                done();
-            });
+                loadFeed(0, done);
+           
 
         });
 
@@ -129,21 +135,8 @@ $(function() {
 
 
     });
-    describe('New Feed Selection', function() {
 
-        // asynchronous function
-
-        beforeEach(function(done) {
-            // loadFeed takes an indicies value 
-            loadFeed(0, function() {
-
-                done();
-            });
-
-        });
-
-
-        /* TODO: Write a new test suite named "New Feed Selection"
+ /* TODO: Write a new test suite named "New Feed Selection"
 
          
                     
@@ -154,13 +147,26 @@ $(function() {
              */
 
 
-        it('is a new feed item added', function() {
-            // get current title of each of the feeds
-            for (var i = 0; i < allFeeds.length; i++) {
-                expect(allFeeds[i - 1]).not.toContain(allFeeds[i]);
+    describe('New Feed Selection', function() {
 
-            }
+        // asynchronous function
+        var feeddata 
+        beforeEach(function(done) {
+            // loadFeed takes an indicies value 
+            
+             loadFeed(1, done);
+             feeddata = $('.feed').html();
+             //console.log(feeddata);
+        }); //.beforeAll
+        
 
+        it('is a new feed item added', function(done) {
+            // load the first item using the loadFeed function
+            // the init is set to zero for the first value
+            // looked at example from 
+            loadFeed(0,done);
+                expect($('.feed').html()).not.toEqual(feeddata);
+                
         });
     });
 }());

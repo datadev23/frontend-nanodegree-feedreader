@@ -75,7 +75,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
 
-        it('menu element is visible', function() {
+        it('menu element is hidden ', function() {
 
 
             
@@ -91,7 +91,7 @@ $(function() {
          * clicked and does it hide when clicked again.
          */
 
-        it('menu element is hidden', function() {
+        it('menu element is visible', function() {
                        // generate the click of the button
          // get the menu link that has been clicked on. 
             // get the sate for when the menu has been hidden

@@ -81,7 +81,8 @@ $(function() {
             
             // the item is hidden
            // $("body").addClass(".menu-hidden");
-            expect($("body").hasClass('menu-hidden')).toBe(true);
+           $('.menu-icon-link').click();
+            expect($("body").hasClass('menu-hidden')).toBe(false);
 
         });
 
@@ -96,7 +97,8 @@ $(function() {
          // get the menu link that has been clicked on. 
             // get the sate for when the menu has been hidden
             $('.menu-icon-link').click();
-             expect($("body").hasClass('menu-hidden')).toBe(false);
+             expect($("body").hasClass('menu-hidden')).toBe(true);
+
 
         });
 

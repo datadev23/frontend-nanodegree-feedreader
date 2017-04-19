@@ -31,26 +31,16 @@ $(function() {
          * and that the URL is not empty.
          */
      
-  
-
-        
-        
-        it('urls are defined', function() {
-           
+        it('urls are defined', function() { 
         allFeeds.forEach(function(feed){
         expect(feed.url).toBeTruthy();
        });   
-
-
         });
         
-
-
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-
 
          it('names are defined', function() {
            allFeeds.forEach(function(feed){
@@ -59,8 +49,6 @@ $(function() {
        });
 
         });
-
-
 
     });
 
@@ -75,10 +63,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
 
-        it('menu element is hidden ', function() {
-
-
-            
+        it('menu element is hidden ', function() {   
             // the item is hidden
            // $("body").addClass(".menu-hidden");
            $('.menu-icon-link').click();
@@ -98,11 +83,7 @@ $(function() {
             // get the sate for when the menu has been hidden
             $('.menu-icon-link').click();
              expect($("body").hasClass('menu-hidden')).toBe(true);
-
-
         });
-
-
     });
 
     /* TODO: Write a new test suite named "Initial Entries" */
@@ -118,13 +99,8 @@ $(function() {
 
         beforeEach(function(done) {
             // loadFeed takes an indicies value 
-            
-
                 loadFeed(0, done);
-           
-
         });
-
 
         it('at least one .entry element', function() {
             // had to add the length to the .feed .entry class
@@ -133,10 +109,7 @@ $(function() {
             // saw this link so i could fix line 127 https://discussions.udacity.com/t/unexpected-trouble-with-initial-entries-test/195850
             var feedlength = $('.feed .entry').length;
             expect(feedlength).toBeGreaterThan(0);
-
         });
-
-
     });
 
  /* TODO: Write a new test suite named "New Feed Selection"
@@ -151,7 +124,6 @@ $(function() {
 
 
     describe('New Feed Selection', function() {
-
         // asynchronous function
         var feeddata 
         beforeEach(function(done) {

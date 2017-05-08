@@ -31,9 +31,6 @@ $(function() {
          * and that the URL is not empty.
          */
      
-  
-
-        
         
         it('urls are defined', function() {
            
@@ -41,10 +38,8 @@ $(function() {
         expect(feed.url).toBeTruthy();
        });   
 
-
         });
         
-
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
@@ -59,8 +54,6 @@ $(function() {
        });
 
         });
-
-
 
     });
 
@@ -102,7 +95,6 @@ $(function() {
 
         });
 
-
     });
 
     /* TODO: Write a new test suite named "Initial Entries" */
@@ -120,8 +112,7 @@ $(function() {
             // loadFeed takes an indicies value 
             
 
-                loadFeed(0, done);
-           
+                loadFeed(0, done); 
 
         });
 

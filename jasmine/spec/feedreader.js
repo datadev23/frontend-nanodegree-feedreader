@@ -86,12 +86,13 @@ $(function() {
          */
 
         it('menu element is visible', function() {
-                       // generate the click of the button
-         // get the menu link that has been clicked on. 
-            // get the sate for when the menu has been hidden
+                       // you need to have two click
+       
             $('.menu-icon-link').click();
              expect($("body").hasClass('menu-hidden')).toBe(true);
 
+             $('.menu-icon-link').click();
+             expect($("body").hasClass('menu-hidden')).toBe(false);
 
         });
 

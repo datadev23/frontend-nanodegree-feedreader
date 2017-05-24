@@ -8,6 +8,7 @@
  * to ensure they don't run until the DOM is ready.
  */
 $(function() {
+     'use strict';
     /* This is our first test suite - a test suite just contains
      * a related set of tests. This suite is all about the RSS
      * feeds definitions, the allFeeds variable in our application.
@@ -108,6 +109,7 @@ $(function() {
             // properties did not appear to chain. 
             // saw this link so i could fix line 127 https://discussions.udacity.com/t/unexpected-trouble-with-initial-entries-test/195850
             var feedlength = $('.feed .entry').length;
+           // console.log(feedlength);
             expect(feedlength).toBeGreaterThan(0);
         });
     });
@@ -125,13 +127,22 @@ $(function() {
 
     describe('New Feed Selection', function() {
         // asynchronous function
-        var feeddata 
+        var feeddata1, feeddata2;
         beforeEach(function(done) {
             // loadFeed takes an indicies value 
             
-             loadFeed(1, done);
-             feeddata = $('.feed').html();
-             //console.log(feeddata);
+             loadFeed(0, function() {
+                feeddata1 = $('.feed').html();
+                //console.log(feeddata1)
+                 loadFeed(1, function() {
+                     feeddata2 = $('.feed').html();
+                     done();
+
+
+                });
+             
+             
+            });
         }); //.beforeAll
         
 
@@ -139,9 +150,11 @@ $(function() {
             // load the first item using the loadFeed function
             // the init is set to zero for the first value
             // looked at example from 
-            loadFeed(0,done);
-                expect($('.feed').html()).not.toEqual(feeddata);
-                
+            console.log("feedata1",feeddata1);
+            console.log("feedata2",feeddata2);
+                expect(feedata1).not.toEqual(feeddata2);
+                done();
+            
         });
     });
 }());

@@ -31,7 +31,7 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-     
+
         it('urls are defined', function() { 
         allFeeds.forEach(function(feed){
         expect(feed.url).toBeTruthy();
@@ -79,12 +79,20 @@ $(function() {
          */
 
         it('menu element is visible', function() {
-                       // generate the click of the button
-         // get the menu link that has been clicked on. 
-            // get the sate for when the menu has been hidden
+                       // you need to have two click
+       
             $('.menu-icon-link').click();
              expect($("body").hasClass('menu-hidden')).toBe(true);
+
+       
+
+
+             $('.menu-icon-link').click();
+             expect($("body").hasClass('menu-hidden')).toBe(false);
+
         });
+
+
     });
 
     /* TODO: Write a new test suite named "Initial Entries" */
@@ -101,6 +109,7 @@ $(function() {
         beforeEach(function(done) {
             // loadFeed takes an indicies value 
                 loadFeed(0, done);
+
         });
 
         it('at least one .entry element', function() {

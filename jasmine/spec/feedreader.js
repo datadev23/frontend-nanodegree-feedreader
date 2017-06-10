@@ -161,7 +161,7 @@ $(function() {
             // looked at example from 
             console.log("feedata1",feeddata1);
             console.log("feedata2",feeddata2);
-                expect(feedata1).not.toEqual(feeddata2);
+                expect(feeddata1).not.toEqual(feeddata2);
                 done();
             
         });

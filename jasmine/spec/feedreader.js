@@ -66,7 +66,6 @@ $(function() {
 
         it('menu element is hidden ', function() {   
             // the item is hidden
-           // $("body").addClass(".menu-hidden");
            $('.menu-icon-link').click();
             expect($("body").hasClass('menu-hidden')).toBe(false);
 
@@ -113,7 +112,6 @@ $(function() {
             // properties did not appear to chain. 
             // saw this link so i could fix line 127 https://discussions.udacity.com/t/unexpected-trouble-with-initial-entries-test/195850
             var feedlength = $('.feed .entry').length;
-           // console.log(feedlength);
             expect(feedlength).toBeGreaterThan(0);
         });
     });
@@ -140,7 +138,6 @@ $(function() {
                      done();
                 });
              
-             
             });
         }); //.beforeAll
         
@@ -149,11 +146,7 @@ $(function() {
             // load the first item using the loadFeed function
             // the init is set to zero for the first value
             // looked at example from 
-            console.log("feedata1",feeddata1);
-            console.log("feedata2",feeddata2);
                 expect(feeddata1).not.toEqual(feeddata2);
-                //done();
-            
         });
     });
 }());

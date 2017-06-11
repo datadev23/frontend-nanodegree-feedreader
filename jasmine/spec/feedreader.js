@@ -1,12 +1,12 @@
-/* feedreader.js
- *
- * This is the spec file that Jasmine will read and contains
- * all of the tests that will be run against your application.
- */
-/* We're placing all of our tests within the $() function,
- * since some of these tests may require DOM elements. We want
- * to ensure they don't run until the DOM is ready.
- */
+  /* feedreader.js
+   *
+   * This is the spec file that Jasmine will read and contains
+   * all of the tests that will be run against your application.
+   */
+  /* We're placing all of our tests within the $() function,
+   * since some of these tests may require DOM elements. We want
+   * to ensure they don't run until the DOM is ready.
+   */
 $(function() {
      'use strict';
     /* This is our first test suite - a test suite just contains
@@ -21,7 +21,7 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
-        it('are defined', function() {
+     it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toEqual('');
         });
@@ -32,7 +32,7 @@ $(function() {
          * and that the URL is not empty.
          */
 
-        it('urls are defined', function() { 
+     it('urls are defined', function() { 
         allFeeds.forEach(function(feed){
         expect(feed.url).toBeTruthy();
        });   
@@ -43,7 +43,7 @@ $(function() {
          * and that the name is not empty.
          */
 
-         it('names are defined', function() {
+    it('names are defined', function() {
            allFeeds.forEach(function(feed){
            expect(feed.name).toBeDefined();
            expect(feed.name).not.toEqual('');
@@ -155,7 +155,7 @@ $(function() {
         }); //.beforeAll
         
 
-        it('is a new feed item added', function(done) {
+      it('is a new feed item added', function(done) {
             // load the first item using the loadFeed function
             // the init is set to zero for the first value
             // looked at example from 

@@ -84,14 +84,9 @@ $(function() {
             $('.menu-icon-link').click();
              expect($("body").hasClass('menu-hidden')).toBe(true);
 
-       
-
-
              $('.menu-icon-link').click();
              expect($("body").hasClass('menu-hidden')).toBe(false);
-
         });
-
 
     });
 
@@ -123,10 +118,7 @@ $(function() {
         });
     });
 
- /* TODO: Write a new test suite named "New Feed Selection"
-
-         
-                    
+ /* TODO: Write a new test suite named "New Feed Selection"               
 
             /* TODO: Write a test that ensures when a new feed is loaded
              * by the loadFeed function that the content actually changes.
@@ -146,8 +138,6 @@ $(function() {
                  loadFeed(1, function() {
                      feeddata2 = $('.feed').html();
                      done();
-
-
                 });
              
              

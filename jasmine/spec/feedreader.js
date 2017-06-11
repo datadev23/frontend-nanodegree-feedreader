@@ -155,14 +155,14 @@ $(function() {
         }); //.beforeAll
         
 
-      it('is a new feed item added', function(done) {
+      it('is a new feed item added', function() {
             // load the first item using the loadFeed function
             // the init is set to zero for the first value
             // looked at example from 
             console.log("feedata1",feeddata1);
             console.log("feedata2",feeddata2);
                 expect(feeddata1).not.toEqual(feeddata2);
-                done();
+                //done();
             
         });
     });

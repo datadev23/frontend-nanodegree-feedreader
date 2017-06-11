@@ -66,8 +66,8 @@ $(function() {
 
         it('menu element is hidden ', function() {   
             // the item is hidden
-           $('.menu-icon-link').click();
-            expect($("body").hasClass('menu-hidden')).toBe(false);
+           //$('.menu-icon-link').click();
+            expect($("body").hasClass('menu-hidden')).toBe(true);
 
         });
 
@@ -78,13 +78,13 @@ $(function() {
          */
 
         it('menu element is visible', function() {
-                       // you need to have two click
        
             $('.menu-icon-link').click();
-             expect($("body").hasClass('menu-hidden')).toBe(true);
-
+             expect($('body').hasClass('menu-hidden')).toBe(false);
              $('.menu-icon-link').click();
-             expect($("body").hasClass('menu-hidden')).toBe(false);
+              expect($('body').hasClass('menu-hidden')).toBe(true);
+
+
         });
 
     });

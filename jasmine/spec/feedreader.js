@@ -100,6 +100,25 @@ $(function () {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
+         alert("test");
+
+         var feeddata;
+
+         beforeEach(function (done) {
+
+            loadFeed(0, function () {
+
+            feeddata = $('.feed').html();
+            console.log(feeddata);
+            done();
+
+            });
+
+
+         });
+
+
+
         it('at least one .entry element', function () {
             // had to add the length to the .feed .entry class
             // it would not work .length.toBeGreaterThan();
@@ -130,7 +149,7 @@ $(function () {
                 });
 
             });
-        }); //.beforeAll
+        }); //.beforeEach
 
 
         it('is a new feed item added', function () {

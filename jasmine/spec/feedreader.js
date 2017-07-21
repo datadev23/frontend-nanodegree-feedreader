@@ -100,7 +100,7 @@ $(function () {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
-         alert("test");
+         
 
          var feeddata;
 

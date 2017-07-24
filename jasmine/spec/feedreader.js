@@ -106,13 +106,12 @@ $(function () {
 
          beforeEach(function (done) {
 
-            loadFeed(0, function () {
+            loadFeed(0, done);
 
             feeddata = $('.feed').html();
-            console.log(feeddata);
-            done();
+            
 
-            });
+          
 
 
          });

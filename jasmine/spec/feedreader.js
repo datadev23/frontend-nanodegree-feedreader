@@ -105,15 +105,8 @@ $(function () {
          var feeddata;
 
          beforeEach(function (done) {
-
             loadFeed(0, done);
-
             feeddata = $('.feed').html();
-            
-
-          
-
-
          });
 
 
